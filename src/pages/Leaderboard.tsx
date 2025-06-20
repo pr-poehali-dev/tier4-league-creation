@@ -3,50 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const Leaderboard = () => {
   const teams = [
-    { rank: 1, name: "Fire Eagles", points: 2450, matches: 24, winRate: 87.5 },
-    {
-      rank: 2,
-      name: "Shadow Wolves",
-      points: 2380,
-      matches: 22,
-      winRate: 86.4,
-    },
-    {
-      rank: 3,
-      name: "Cyber Knights",
-      points: 2250,
-      matches: 26,
-      winRate: 80.8,
-    },
-    { rank: 4, name: "Storm Riders", points: 2180, matches: 23, winRate: 78.3 },
-    {
-      rank: 5,
-      name: "Neon Phantoms",
-      points: 2120,
-      matches: 25,
-      winRate: 76.0,
-    },
-    {
-      rank: 6,
-      name: "Digital Legends",
-      points: 2050,
-      matches: 21,
-      winRate: 71.4,
-    },
-    {
-      rank: 7,
-      name: "Frost Guardians",
-      points: 1980,
-      matches: 24,
-      winRate: 70.8,
-    },
-    {
-      rank: 8,
-      name: "Tech Warriors",
-      points: 1920,
-      matches: 23,
-      winRate: 69.6,
-    },
+    { rank: 1, name: "VSP team", points: 2450, matches: 24, winRate: 87.5 },
   ];
 
   const getRankIcon = (rank: number) => {
