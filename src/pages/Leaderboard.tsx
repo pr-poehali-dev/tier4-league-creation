@@ -6,6 +6,17 @@ const Leaderboard = () => {
     { rank: 1, name: "VSP team", points: 2450, matches: 24, winRate: 87.5 },
   ];
 
+  // Создаем пустые слоты для будущих команд
+  const emptySlots = Array.from({ length: 19 }, (_, index) => ({
+    rank: index + 2,
+    name: "Team Name",
+    points: "TBD",
+    matches: "TBD",
+    winRate: "TBD",
+  }));
+
+  const allTeams = [...teams, ...emptySlots];
+
   const getRankIcon = (rank: number) => {
     switch (rank) {
       case 1:
@@ -57,13 +68,15 @@ const Leaderboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {teams.map((team, index) => (
+                  {allTeams.map((team, index) => (
                     <tr
                       key={team.rank}
                       className={`border-b border-gray-700/50 hover:bg-orange-500/5 transition-colors ${
                         index < 3
                           ? "bg-gradient-to-r from-orange-500/5 to-red-600/5"
-                          : ""
+                          : index >= 1
+                            ? "opacity-60"
+                            : ""
                       }`}
                     >
                       <td className="px-6 py-4">
@@ -76,20 +89,38 @@ const Leaderboard = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                          <div
+                            className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                              index === 0
+                                ? "bg-gradient-to-br from-orange-500 to-red-600"
+                                : "bg-gray-600/50"
+                            }`}
+                          >
                             <Icon
                               name="Shield"
                               size={16}
-                              className="text-white"
+                              className={
+                                index === 0 ? "text-white" : "text-gray-500"
+                              }
                             />
                           </div>
-                          <span className="font-medium text-white">
+                          <span
+                            className={`font-medium ${
+                              index === 0
+                                ? "text-white"
+                                : "text-gray-500 italic"
+                            }`}
+                          >
                             {team.name}
                           </span>
                         </div>
                       </td>
                       <td className="px-6 py-4 text-center">
-                        <span className="font-bold text-orange-400">
+                        <span
+                          className={`font-bold ${
+                            index === 0 ? "text-orange-400" : "text-gray-500"
+                          }`}
+                        >
                           {team.points}
                         </span>
                       </td>
@@ -99,14 +130,18 @@ const Leaderboard = () => {
                       <td className="px-6 py-4 text-center">
                         <span
                           className={`font-medium ${
-                            team.winRate >= 80
-                              ? "text-green-400"
-                              : team.winRate >= 70
-                                ? "text-yellow-400"
-                                : "text-gray-400"
+                            index === 0 && typeof team.winRate === "number"
+                              ? team.winRate >= 80
+                                ? "text-green-400"
+                                : team.winRate >= 70
+                                  ? "text-yellow-400"
+                                  : "text-gray-400"
+                              : "text-gray-500"
                           }`}
                         >
-                          {team.winRate}%
+                          {typeof team.winRate === "number"
+                            ? `${team.winRate}%`
+                            : team.winRate}
                         </span>
                       </td>
                     </tr>
