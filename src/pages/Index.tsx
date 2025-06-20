@@ -23,9 +23,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg cs2-border-glow"
-                onClick={() =>
-                  window.open("https://t.me/+QgiLIa1gFRY4Y2Iy", "_blank")
-                }
+                onClick={() => window.open("https://t.me/VSPteam", "_blank")}
               >
                 <Icon name="Send" size={20} className="mr-2" />
                 Присоединиться @VSPteam
