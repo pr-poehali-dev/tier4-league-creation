@@ -21,7 +21,12 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg cs2-border-glow">
+              <Button
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg cs2-border-glow"
+                onClick={() =>
+                  window.open("https://t.me/+QgiLIa1gFRY4Y2Iy", "_blank")
+                }
+              >
                 <Icon name="Send" size={20} className="mr-2" />
                 Присоединиться @VSPteam
               </Button>
@@ -94,7 +99,12 @@ const Index = () => {
               Присоединяйтесь к Tier 4 Leagues и начните свое восхождение в мире
               киберспорта
             </p>
-            <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg">
+            <Button
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg"
+              onClick={() =>
+                window.open("https://t.me/+QgiLIa1gFRY4Y2Iy", "_blank")
+              }
+            >
               <Icon name="MessageCircle" size={20} className="mr-2" />
               Связаться в Telegram
             </Button>
