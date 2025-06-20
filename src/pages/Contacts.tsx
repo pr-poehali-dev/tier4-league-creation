@@ -44,7 +44,10 @@ const Contacts = () => {
                 </p>
               </div>
 
-              <Button className="w-full bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold py-3 px-6 rounded-lg">
+              <Button
+                className="w-full bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold py-3 px-6 rounded-lg"
+                onClick={() => window.open("https://t.me/VSPteam", "_blank")}
+              >
                 <Icon name="ExternalLink" size={20} className="mr-2" />
                 Открыть в Telegram
               </Button>
@@ -126,7 +129,10 @@ const Contacts = () => {
               Ваше киберспортивное будущее начинается здесь!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg">
+              <Button
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg"
+                onClick={() => window.open("https://t.me/VSPteam", "_blank")}
+              >
                 <Icon name="MessageCircle" size={20} className="mr-2" />
                 Написать @VSPteam
               </Button>
